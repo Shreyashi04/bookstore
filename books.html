@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Books — Pustak E-Book Store</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- ── Navbar ─────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Pustak<span>.</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="books.html" class="active">Books</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="nav-search">
+        <svg class="nav-search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+        <input type="search" placeholder="Search books, authors…" id="nav-search-input" aria-label="Search books" />
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle nav-icon-btn"></button>
+        <a href="cart.html" class="nav-icon-btn" aria-label="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1" />
+            <circle cx="20" cy="21" r="1" />
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+          </svg>
+          <span class="cart-badge"></span>
+        </a>
+        <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="cart.html">Cart</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <!-- ── Page Banner ────────────────────────────────────── -->
+  <div class="page-banner">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+        <span>Books</span>
+      </div>
+      <h1>Our Library</h1>
+      <p>Discover your next great read from our curated collection</p>
+    </div>
+  </div>
+
+  <!-- ── Books Section ───────────────────────────────────── -->
+  <section class="section" style="padding-top: 40px;">
+    <div class="container">
+
+      <!-- Toolbar -->
+      <div class="books-toolbar">
+        <div class="toolbar-search">
+          <svg class="toolbar-search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+          <input type="search" id="search-input" placeholder="Search by title, author, or category…"
+            aria-label="Search" />
+        </div>
+        <select id="sort-select" class="sort-select" aria-label="Sort books">
+          <option value="default">Sort: Default</option>
+          <option value="price-asc">Price: Low → High</option>
+          <option value="price-desc">Price: High → Low</option>
+          <option value="az">A → Z</option>
+          <option value="rating">Top Rated</option>
+        </select>
+        <span id="results-count" class="results-count"></span>
+      </div>
+
+      <!-- Category filter -->
+      <div class="category-filters" style="margin-bottom: 28px;">
+        <button class="category-btn active" data-cat="All">All</button>
+        <button class="category-btn" data-cat="Programming">Programming</button>
+        <button class="category-btn" data-cat="Business">Business</button>
+        <button class="category-btn" data-cat="Fiction">Fiction</button>
+        <button class="category-btn" data-cat="Science">Science</button>
+      </div>
+
+      <!-- Grid -->
+      <div class="books-grid" id="books-grid"></div>
+    </div>
+  </section>
+
+  <!-- ── Book Modal ──────────────────────────────────────── -->
+  <div class="modal-overlay" id="book-modal" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- ── Footer ──────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Pustak<span style="color:rgba(255,255,255,.5)">.</span></a>
+          <p>Your curated destination for premium e-books.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Store</h4>
+          <a href="books.html">All Books</a>
+          <a href="books.html?cat=Programming">Programming</a>
+          <a href="books.html?cat=Business">Business</a>
+          <a href="books.html?cat=Fiction">Fiction</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <a href="cart.html">Cart</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Pustak. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/books.js"></script>
+  <script src="js/books(home).js">
+  </script>
+</body>
+
+</html>

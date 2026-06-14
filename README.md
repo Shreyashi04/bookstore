@@ -1,4 +1,4 @@
-# 📚 Pustak — E-Book Store
+# Pustak — E-Book Store
 
 Pustak is a responsive front-end e-book store built using **HTML, CSS, and JavaScript**. It allows users to browse books, search and filter titles, manage a shopping cart, maintain a wishlist, switch between light and dark themes, and complete a simulated checkout process.
 
